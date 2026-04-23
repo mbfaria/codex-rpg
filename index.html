@@ -3,1339 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pierrot — O Véu que Permanece</title>
-  <meta name="description" content="Lorebook cinematográfico do personagem Pierrot, monge do Véu Partilhado. História, monastério, Três Caminhos, Arlequina e Colombino, a Queda, a Ferida Anti-Entrópica, a Reconstrução e as inspirações narrativas." />
+  <title>Codex RPG</title>
+  <meta name="description" content="Coletânea pessoal de personagens e histórias de RPG de mesa." />
   <meta name="theme-color" content="#0b0b10" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/mask-pierrot.svg" />
+  <style>
+    :root {
+      --bg: #0b0b10;
+      --bg-elev: #12121a;
+      --ink: #ece7dc;
+      --ink-dim: #a8a396;
+      --ink-mute: #706c62;
+      --rule: #25242e;
+      --gold: #c9b27a;
+      --serif: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      flex: 1;
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 96px 28px 64px;
+    }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 18px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: -0.01em;
+    }
+    h1 em { color: var(--gold); font-style: italic; font-weight: 400; }
+    .lede {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      color: var(--ink-dim);
+      margin: 0 0 56px;
+      max-width: 60ch;
+    }
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 40px;
+    }
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 24px;
+    }
+    .cast {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 18px;
+    }
+    .cast a {
+      display: block;
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 24px 26px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .cast a:hover,
+    .cast a:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      background: #161622;
+      outline: none;
+    }
+    .cast h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.6rem;
+      margin: 0 0 6px;
+    }
+    .cast .meta {
+      font-size: 0.82rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+    .cast p {
+      margin: 0;
+      color: var(--ink-dim);
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      line-height: 1.5;
+    }
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--ink-mute);
+    }
+    @media (max-width: 520px) {
+      main { padding: 64px 20px 48px; }
+      .cast a { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+<main>
+  <p class="eyebrow">Codex RPG</p>
+  <h1>Crônica <em>pessoal</em> de mesas e máscaras.</h1>
+  <p class="lede">
+    Coletânea de personagens e histórias construídos para campanhas de RPG
+    de mesa. Cada entrada é um site próprio, com a lore consolidada e as
+    referências que a originaram.
+  </p>
 
-<header class="site-header" id="top">
-  <div class="header-inner">
-    <a href="#top" class="brand" aria-label="Início">
-      <span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><ellipse cx="70" cy="76" rx="54" ry="58" fill="#f7f4ec" stroke="#2a2a35" stroke-width="3"/><path d="M34 76 Q46 84 58 76" fill="none" stroke="#2a2a35" stroke-width="4" stroke-linecap="round"/><path d="M82 76 Q94 84 106 76" fill="none" stroke="#2a2a35" stroke-width="4" stroke-linecap="round"/><path d="M46 86 Q42 100 48 108 Q54 100 50 86 Z" fill="#6e9bb8"/><ellipse cx="70" cy="116" rx="3.5" ry="5" fill="#2a2a35"/></svg></span>
-      <span class="brand-text">
-        <span class="brand-name">Pierrot</span>
-        <span class="brand-sub">O Véu que Permanece</span>
-      </span>
-    </a>
-    <nav class="site-nav" aria-label="Navegação principal">
-      <ul>
-        <li><a href="#origem">Origem</a></li>
-        <li><a href="#monasterio">Monastério</a></li>
-        <li><a href="#queda">A Queda</a></li>
-        <li><a href="#reconstrucao">Reconstrução</a></li>
-        <li><a href="#presente">Presente</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav-mobile">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="site-nav-mobile" id="site-nav-mobile" hidden>
-    <a href="#origem">Origem</a>
-    <a href="#monasterio">Monastério</a>
-    <a href="#queda">A Queda</a>
-    <a href="#reconstrucao">Reconstrução</a>
-    <a href="#presente">Presente</a>
-  </div>
-</header>
+  <hr class="divider" />
 
-<main id="conteudo">
-
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-image" aria-hidden="true">
-      <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Antoine_Watteau_-_Pierrot,_dit_autrefois_Gilles.jpg?width=1200"
-        alt=""
-        loading="eager"
-        decoding="async"
-      />
-      <div class="hero-veil"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Monge do Véu Partilhado</p>
-      <h1 id="hero-title" class="hero-title">Pierrot</h1>
-      <p class="hero-sub">O Véu que Permanece</p>
-      <blockquote class="hero-quote">
-        <p>“Não temo falhar. Temo falhar da mesma forma outra vez.”</p>
-      </blockquote>
-      <a class="hero-scroll" href="#prologo" aria-label="Rolar para o prólogo">
-        <span>descer ao silêncio</span>
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path d="M12 4v14m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+  <p class="section-label">Personagens</p>
+  <ul class="cast">
+    <li>
+      <a href="pierrot/">
+        <p class="meta">D&amp;D 5e · Monk 10 · Way of the Open Hand</p>
+        <h2>Pierrot — O Véu que Permanece</h2>
+        <p>Monge do Monastério do Véu Partilhado. Caminho da Mão Limpa.</p>
       </a>
-    </div>
-  </section>
-
-  <div class="layout">
-
-    <!-- TIMELINE FIXA -->
-    <aside class="timeline" aria-label="Linha do tempo">
-      <ol>
-        <li><a href="#prologo"><span>Prólogo</span></a></li>
-        <li><a href="#monasterio"><span>O Véu Partilhado</span></a></li>
-        <li><a href="#caminhos"><span>Os Três Caminhos</span></a></li>
-        <li><a href="#irmaos"><span>Arlequina &amp; Colombino</span></a></li>
-        <li><a href="#cenas"><span>Três cenas</span></a></li>
-        <li><a href="#formacao"><span>Formação</span></a></li>
-        <li><a href="#partida"><span>A Partida</span></a></li>
-        <li><a href="#queda"><span>A Queda</span></a></li>
-        <li><a href="#ferida"><span>Ferida Anti-Entrópica</span></a></li>
-        <li><a href="#errancia"><span>Anos de Errância</span></a></li>
-        <li><a href="#descoberta"><span>A Descoberta</span></a></li>
-        <li><a href="#reconstrucao"><span>Reconstrução</span></a></li>
-        <li><a href="#personalidade"><span>Personalidade &amp; Falha</span></a></li>
-        <li><a href="#codice"><span>Códice</span></a></li>
-        <li><a href="#inspiracoes"><span>Inspirações</span></a></li>
-        <li><a href="#questoes"><span>Questões em Aberto</span></a></li>
-      </ol>
-    </aside>
-
-    <article class="content">
-
-      <!-- PRÓLOGO -->
-      <section id="prologo" class="section">
-        <p class="section-kicker">Prólogo</p>
-        <h2 class="section-title">O monge que voltou para encontrar apenas ruínas</h2>
-        <div class="section-body">
-          <p class="lede">
-            Pierrot partiu para entender o mundo além da montanha. Quando voltou,
-            o monastério já não existia. <strong>Sem corpos. Sem respostas. Sem despedidas.</strong>
-          </p>
-          <p>
-            Existem três coisas que um monge do Véu Partilhado aprendia a não
-            confiar: no silêncio que chega sem aviso, na conclusão que não pede
-            pergunta, e na memória que lembra só o que dói. Pierrot as encontrou
-            todas de uma vez, num único dia, no alto da mesma trilha pela qual
-            havia descido alguns meses antes.
-          </p>
-          <p>
-            O que se segue não é uma biografia. É a tentativa de um homem
-            alinhar novamente corpo, memória e propósito depois de ter sido
-            <a href="#ferida">temporalmente ferido</a> — e de
-            <a href="#reconstrucao">reconstruir o que restou</a> sem repetir
-            os erros que derrubaram o que havia antes.
-          </p>
-          <p>
-            A pergunta que atravessa cada capítulo é sempre a mesma, dita em
-            voz baixa: <em>é possível erguer um lugar novo sem, no esforço,
-            trair a lembrança do lugar que caiu?</em>
-          </p>
-        </div>
-      </section>
-
-      <!-- I - ORIGEM -->
-      <section id="origem" class="section section--group-anchor">
-        <p class="section-kicker">I · Origem</p>
-        <h2 class="section-title">Quem Pierrot se tornou</h2>
-        <div class="section-body">
-          <p>
-            Pierrot não nasceu no Monastério do Véu Partilhado, mas foi lá que
-            ele se tornou quem era. Ainda jovem, foi levado por viajantes que
-            reconheceram nele algo raro: <em>atenção</em>. Não força, não
-            talento bruto — mas uma capacidade incomum de observar o mundo
-            sem pressa, de ficar com os olhos abertos por tempo demais diante
-            de qualquer coisa, humilde ou enorme, como se cada gesto
-            merecesse registro.
-          </p>
-          <p>
-            A infância anterior ao Véu é, por vontade do próprio Pierrot, uma
-            página em repouso. Ele nunca escondeu nada; apenas parou de contar.
-            “Não é segredo”, disse uma vez a Colombino, “é um ruído que eu
-            escolhi calar para poder ouvir o que veio depois.” Os mestres não
-            insistiram. No monastério, um passado que não pede ser dito é um
-            passado que ainda está fazendo silêncio em alguém.
-          </p>
-          <p>
-            O monastério não recrutava. Ele <strong>acolhia</strong>. E apenas
-            aqueles que escolhiam ficar permaneciam — não como uma conversão,
-            mas como uma forma lenta de ir ficando. Pierrot ficou. Primeiro
-            por semanas, depois por anos, e então por uma razão que ele nunca
-            conseguiu resumir em uma frase sem perder a verdade dela.
-          </p>
-          <p class="monastic-pillar">
-            <span>Primeira lição</span>
-            “A pressa é um tipo de cegueira que não dói.”
-          </p>
-        </div>
-      </section>
-
-      <!-- II - MONASTÉRIO -->
-      <section id="monasterio" class="section">
-        <p class="section-kicker">II · Monastério</p>
-        <h2 class="section-title">O Véu Partilhado</h2>
-
-        <figure class="section-figure">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Taktshang.jpg?width=1200"
-            alt="Monastério em penhasco entre montanhas, ao estilo de Paro Taktsang."
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            Imagem evocativa — <em><a href="https://pt.wikipedia.org/wiki/Paro_Taktsang" target="_blank" rel="noopener">Paro Taktsang</a></em> (Butão), via
-            <a href="https://commons.wikimedia.org/wiki/File:Taktshang.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>.
-            Usada como referência visual ao monastério do Véu Partilhado, que
-            existia “no limite entre o mundo e o silêncio”.
-          </figcaption>
-        </figure>
-
-        <div class="section-body">
-          <p>
-            O Véu Partilhado não buscava isolamento absoluto. Ele existia no
-            limite entre o mundo e o silêncio. Era um lugar de passagem,
-            aprendizado e escuta — construído num esporão de granito pálido,
-            onde a montanha recua o suficiente para sustentar três pátios
-            concêntricos, e não tanto a ponto de esconder quem chegava. De
-            longe, parecia um pequeno véu pousado sobre a pedra. Daí o nome.
-          </p>
-          <p>
-            A vida no monastério era moldada pelo ritmo do lugar. O vento
-            constante atravessava os pátios de pedra, os tecidos pendurados
-            dançavam o dia inteiro, e cada ação — treino, estudo ou silêncio —
-            tinha intenção. O dia se organizava em <strong>cinco respirações</strong>
-            — alvorada, clareia, meio-dia, declina, vela — e cada uma delas
-            marcada por um sino que batia três vezes, nunca mais. Três,
-            porque o quarto toque seria insistir; e insistir era já não ouvir.
-          </p>
-          <p>
-            Três espaços sustentavam a rotina, cada um com o seu próprio
-            silêncio:
-          </p>
-
-          <ul class="dogma-list">
-            <li><strong>Pátio dos Tecidos.</strong> Ali o corpo aprendia.
-              Panos brancos e ocres marcavam o ar como respiração visível;
-              quando o vento parava, o treino parava junto — porque a
-              forma só existia com alguém para vê-la.</li>
-            <li><strong>Pavilhão das Horas.</strong> Uma sala quase vazia
-              voltada para o leste, com tábuas que rangiam só de madrugada.
-              Era onde se meditava e onde se fazia o voto diário de
-              <em>ficar com o que é</em>.</li>
-            <li><strong>Câmara da Leitura Partilhada.</strong> Não uma
-              biblioteca — uma sala onde se lia em voz baixa para o outro.
-              Livros nunca ficavam sozinhos: ouvir era metade da leitura.</li>
-          </ul>
-
-          <p class="monastic-pillar">
-            <span>Princípio do Véu</span>
-            “O eu só existe em relação ao outro.”
-          </p>
-          <p>
-            Dos dogmas centrais, quatro se repetiam como respiração nas horas
-            do dia:
-          </p>
-
-          <ul class="dogma-list">
-            <li>Disciplina sem compaixão é violência.</li>
-            <li>Alegria é uma forma de iluminação.</li>
-            <li>O corpo é a oração visível.</li>
-            <li>Toda máscara revela algo verdadeiro.</li>
-          </ul>
-
-          <p>
-            A arquitetura do lugar tinha uma regra que parecia pequena e, com
-            o tempo, se revelava central: <em>nada é refeito para ficar perfeito</em>.
-            Madeiras rachadas ganhavam grampo e seguiam em serviço; pedras
-            lascadas eram alisadas, não substituídas. Os mestres chamavam isso
-            de “o belo que envelhece”. Só depois, errando por outras terras,
-            Pierrot encontraria em livros de outros povos nomes próximos —
-            como
-            <a href="https://pt.wikipedia.org/wiki/Wabi-sabi" target="_blank" rel="noopener">wabi-sabi</a>
-            — e entenderia que a sua casa antiga tinha falado com o mundo
-            sem precisar do vocabulário do mundo.
-          </p>
-          <p>
-            Mas o Véu Partilhado não era perfeito. E Pierrot sabia disso. A
-            abertura para o mundo que lhe parecia virtude também o parecia
-            fraqueza, e ele carregava essa suspeita consigo como quem carrega
-            um seixo dentro do sapato: não doía, mas lembrava que o chão
-            existia, e que o chão, às vezes, cede.
-          </p>
-        </div>
-      </section>
-
-      <!-- III - OS TRÊS CAMINHOS -->
-      <section id="caminhos" class="section section--paths">
-        <p class="section-kicker">III · Tradições</p>
-        <h2 class="section-title">Os Três Caminhos</h2>
-        <p class="section-lede">
-          Os ensinamentos do Véu Partilhado se dividiam em três caminhos. Não
-          eram castas, nem escolas rivais: eram três modos de atravessar a
-          mesma porta. <a href="#irmaos">Arlequina e Colombino</a> ecoam,
-          cada um, dois desses caminhos — e Pierrot seguia o terceiro. Os
-          mestres eram firmes numa só regra: <em>ninguém segue um caminho
-          sozinho</em>. Quem se fechava em um só, quebrava.
-        </p>
-
-        <div class="paths-grid">
-          <article class="path-card" data-path="riso">
-            <div class="path-mask"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-label="Máscara Hyottoko do Riso: rosto assimétrico com faixa de losangos." focusable="false"><defs><pattern id="arl-losango" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#c9b27a"/><rect x="6" y="0" width="6" height="6" fill="#7a5a2a"/><rect x="0" y="6" width="6" height="6" fill="#7a5a2a"/></pattern></defs><ellipse cx="70" cy="82" rx="54" ry="56" fill="#f4efe6" stroke="#1a1a22" stroke-width="2.2"/><path d="M18 52 Q70 40 122 52 L122 64 Q70 54 18 64 Z" fill="url(#arl-losango)" stroke="#1a1a22" stroke-width="1.8" stroke-linejoin="round"/><path d="M120 46 Q136 42 138 54 Q136 66 118 62 Z" fill="#c9b27a" stroke="#1a1a22" stroke-width="1.4" stroke-linejoin="round"/><path d="M132 54 L142 60" stroke="#c9b27a" stroke-width="2.6" stroke-linecap="round"/><path d="M130 60 L140 66" stroke="#c9b27a" stroke-width="2.6" stroke-linecap="round"/><path d="M34 86 Q46 78 58 86" fill="none" stroke="#1a1a22" stroke-width="3" stroke-linecap="round"/><circle cx="92" cy="84" r="7" fill="#f4efe6" stroke="#1a1a22" stroke-width="2"/><circle cx="92" cy="84" r="3.5" fill="#1a1a22"/><circle cx="34" cy="104" r="5.5" fill="#c7483e" opacity="0.55"/><circle cx="100" cy="104" r="5.5" fill="#c7483e" opacity="0.55"/><ellipse cx="86" cy="118" rx="7" ry="9" fill="#1a1a22"/><ellipse cx="86" cy="116" rx="3" ry="4" fill="#4a1f1b"/></svg></div>
-            <h3>Os do Riso</h3>
-            <p class="path-body">
-              Acreditavam que rigidez excessiva leva à cegueira. Usavam
-              leveza e improviso como ferramenta espiritual — não para
-              fugir do peso, mas para não se tornarem iguais a ele.
-              Treinavam no Pátio dos Tecidos com jogos em que um monge
-              derrubava o outro sem usar as mãos e depois ria primeiro
-              que todos.
-            </p>
-            <p class="path-quote">“A forma muda. O apego é que pesa.”</p>
-          </article>
-
-          <article class="path-card path-card--center" data-path="silencio">
-            <div class="path-mask"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-label="Máscara Hyottoko do Silêncio: rosto pálido, olhos fechados, lágrima única." focusable="false"><ellipse cx="70" cy="82" rx="54" ry="56" fill="#f7f4ec" stroke="#2a2a35" stroke-width="2.2"/><path d="M20 52 Q70 44 120 52 L120 60 Q70 52 20 60 Z" fill="#eae5d8" stroke="#2a2a35" stroke-width="1.4" stroke-linejoin="round"/><path d="M66 58 A6 6 0 1 0 74 50 A4.6 4.6 0 1 1 66 58 Z" fill="#2a2a35" opacity="0.8"/><path d="M34 82 Q46 90 58 82" fill="none" stroke="#2a2a35" stroke-width="2.8" stroke-linecap="round"/><path d="M82 82 Q94 90 106 82" fill="none" stroke="#2a2a35" stroke-width="2.8" stroke-linecap="round"/><path d="M44 88 Q40 100 46 108 Q52 100 48 88 Z" fill="#6e9bb8" opacity="0.8"/><circle cx="34" cy="106" r="5" fill="#c7483e" opacity="0.12"/><circle cx="100" cy="106" r="5" fill="#c7483e" opacity="0.12"/><ellipse cx="70" cy="118" rx="3" ry="4.5" fill="#2a2a35"/><path d="M62 122 Q70 126 78 122" fill="none" stroke="#2a2a35" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/></svg></div>
-            <h3>Os do Silêncio</h3>
-            <p class="path-body">
-              Focados em disciplina, observação e controle interno.
-              <strong>Pierrot seguia esse caminho.</strong> Buscavam a
-              união entre intenção e gesto — algo muito próximo do
-              <a href="https://pt.wikipedia.org/wiki/Mushin" target="_blank" rel="noopener">mushin</a>
-              de outras tradições marciais: agir sem o ruído do próprio
-              julgamento, deixar o corpo responder antes do medo.
-            </p>
-            <p class="path-quote">
-              “Sou forma em movimento.<br />
-              Sou intenção antes do gesto.”
-            </p>
-          </article>
-
-          <article class="path-card" data-path="palavra">
-            <div class="path-mask"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-label="Máscara Hyottoko da Palavra: rosto índigo com faixa dourada e ideograma." focusable="false"><ellipse cx="70" cy="82" rx="54" ry="56" fill="#1a1722" stroke="#d9c48a" stroke-width="2.2"/><path d="M18 52 Q70 40 122 52 L122 64 Q70 54 18 64 Z" fill="#d9c48a" stroke="#0b0b10" stroke-width="1.6" stroke-linejoin="round"/><g stroke="#0b0b10" stroke-width="1.8" stroke-linecap="round" fill="none"><line x1="60" y1="52" x2="80" y2="52"/><line x1="62" y1="56" x2="78" y2="56"/><line x1="62" y1="60" x2="78" y2="60"/></g><rect x="64" y="62" width="12" height="4" fill="none" stroke="#0b0b10" stroke-width="1.4"/><path d="M20 46 Q4 42 2 54 Q4 66 22 62 Z" fill="#d9c48a" stroke="#0b0b10" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 54 L-2 60" stroke="#d9c48a" stroke-width="2.6" stroke-linecap="round"/><path d="M10 60 L0 66" stroke="#d9c48a" stroke-width="2.6" stroke-linecap="round"/><path d="M34 84 Q46 78 58 82 Q46 88 34 84 Z" fill="#d9c48a"/><path d="M82 82 Q94 78 106 84 Q94 88 82 82 Z" fill="#d9c48a"/><circle cx="46" cy="84" r="2" fill="#0b0b10"/><circle cx="94" cy="84" r="2" fill="#0b0b10"/><circle cx="34" cy="104" r="4.5" fill="#d9c48a" opacity="0.4"/><circle cx="100" cy="104" r="4.5" fill="#d9c48a" opacity="0.4"/><path d="M56 116 Q70 122 86 114" fill="none" stroke="#d9c48a" stroke-width="2.4" stroke-linecap="round"/></svg></div>
-            <h3>Os da Palavra</h3>
-            <p class="path-body">
-              Estudiosos e mediadores. Buscavam compreender antes de
-              julgar — e traduzir antes de condenar. Mantinham o diário
-              comunitário do monastério, onde toda decisão grave era
-              registrada em três versões: a dos que concordaram, a dos
-              que duvidaram, e a do tempo, que ainda não havia falado.
-            </p>
-            <p class="path-quote">“Quem nomeia, aproxima.”</p>
-          </article>
-        </div>
-
-        <p class="section-body">
-          Cada caminho tinha um custo conhecido — e assumido. O Riso podia
-          deslizar para a anestesia; o Silêncio, para a dureza; a Palavra,
-          para a vaidade de ter explicação para tudo. Por isso nenhum monge
-          era encorajado a seguir um só. A regra era simples e inegociável:
-          <em>escolha um como base, outro como correção, o terceiro como
-          lembrete</em>. Pierrot, com o tempo, passou a reconhecer isso como
-          a lição mais difícil do lugar — e a mais fácil de esquecer.
-        </p>
-      </section>
-
-      <!-- IV - IRMÃOS -->
-      <section id="irmaos" class="section">
-        <p class="section-kicker">IV · Irmãos</p>
-        <h2 class="section-title">Arlequina e Colombino</h2>
-        <p class="section-lede">
-          Não são arquétipos vestidos de gente — são pessoas, e ecoam os
-          <a href="#caminhos">caminhos</a> apenas como qualquer vida ecoa a
-          tradição que a formou. Os nomes vêm da
-          <a href="https://pt.wikipedia.org/wiki/Commedia_dell%27arte" target="_blank" rel="noopener">Commedia dell'Arte</a>,
-          sim, mas só por cortesia ao que o monastério chamava de
-          <em>máscara que revela</em>: um jeito de carregar um arquétipo
-          de perto, sem que ele vire fantasia.
-        </p>
-
-        <div class="duo-grid">
-          <figure class="duo-figure">
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/SAND_Maurice_Masques_et_bouffons_01.jpg?width=480"
-              alt="Ilustração de Arlequina por Maurice Sand."
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <em><a href="https://pt.wikipedia.org/wiki/Arlequim" target="_blank" rel="noopener">Arlequim</a></em>,
-              Maurice Sand, <em>Masques et bouffons</em> (1862).
-              <a href="https://commons.wikimedia.org/wiki/File:SAND_Maurice_Masques_et_bouffons_01.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>, domínio público.
-            </figcaption>
-          </figure>
-
-          <div class="duo-body">
-            <h3>Arlequina</h3>
-            <p>
-              Arlequina não era caótica — era <strong>intencionalmente
-              leve</strong>. Ela percebia quando o silêncio se tornava
-              pesado demais e usava o humor para quebrar tensões. Com
-              Pierrot, ela era equilíbrio: quando ele se fechava, ela o
-              puxava de volta — às vezes com uma piada, às vezes
-              apenas sentando ao lado dele sem dizer nada.
-            </p>
-            <p>
-              Por dentro, Arlequina tinha medo do silêncio que vem
-              <em>depois</em> do riso — aquele intervalo em que ninguém
-              sabe o que dizer, e a brincadeira já não ajuda. Ela
-              costumava tamborilar com os dedos nos joelhos quando
-              pensava em algo que não quis dizer; Pierrot aprendeu a
-              reconhecer esse ritmo antes de qualquer frase sua.
-              Quando ele decidiu partir, ela riu como sempre — mas
-              aquele riso não alcançou os olhos, e ele, em vez de
-              comentar, apenas sentou ao lado dela. Ela entendeu.
-              Às vezes o próprio Riso pedia Silêncio.
-            </p>
-            <p class="path-quote">“Se eu parar de rir, é porque preciso.”</p>
-          </div>
-        </div>
-
-        <div class="duo-grid duo-grid--reverse">
-          <figure class="duo-figure">
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/SAND_Maurice_Masques_et_bouffons_03.jpg?width=480"
-              alt="Ilustração de Colombina por Maurice Sand."
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <em><a href="https://pt.wikipedia.org/wiki/Colombina_(personagem)" target="_blank" rel="noopener">Colombina</a></em>,
-              Maurice Sand, <em>Masques et bouffons</em> (1862).
-              <a href="https://commons.wikimedia.org/wiki/File:SAND_Maurice_Masques_et_bouffons_03.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>, domínio público.
-            </figcaption>
-          </figure>
-
-          <div class="duo-body">
-            <h3>Colombino</h3>
-            <p>
-              Colombino era paciente, observador e profundamente sábio.
-              Nunca dava respostas diretas — apenas
-              <strong>perguntas que permaneciam</strong>. Foi ele quem
-              ensinou Pierrot a estudar o mundo além do monastério e a
-              não confiar cegamente em nenhuma verdade, inclusive nas
-              que pareciam pertencer ao próprio Véu.
-            </p>
-            <p>
-              Colombino temia exatamente aquilo que melhor fazia:
-              dar o conselho que parece certo, mas não é. Havia no
-              caminho da Palavra uma vaidade discreta — a de ter
-              resposta — e ele a combatia com um gesto pequeno: antes
-              de dizer algo difícil, passava dois dedos pela base do
-              pescoço, devagar, como quem pede licença a uma voz maior.
-              Pierrot, com o tempo, passou a fazer o mesmo gesto sem
-              perceber. Foi a única herança de mestre que ele levou
-              de forma visível.
-            </p>
-            <p class="path-quote">“Pergunta é um modo de não abandonar ninguém.”</p>
-          </div>
-        </div>
-
-        <div class="section-body">
-          <p>
-            Arlequina e Colombino não eram apenas irmãos de ofício —
-            eram, juntos, a prova viva de que os caminhos precisam uns
-            dos outros. Ela o puxava para fora da sala; ele a trazia de
-            volta quando o riso começava a se tornar defesa. Pierrot
-            aprendeu entre os dois: no meio, e nunca tão ao centro
-            quanto imaginou. Era entre os dois que ele conseguia, por
-            alguns instantes, ficar inteiro.
-          </p>
-        </div>
-      </section>
-
-      <!-- IV.5 - ENTREATO · CENAS -->
-      <section id="cenas" class="section section--scenes">
-        <p class="section-kicker">Entreato · Cenas</p>
-        <h2 class="section-title">Três cenas que ficaram</h2>
-        <p class="section-lede">
-          Antes da partida, antes da queda, antes de qualquer coisa
-          virar ruína. Três momentos guardados inteiros — um por
-          vínculo. Não são lembranças de glória; são os pequenos
-          instantes em que Pierrot, Arlequina e Colombino foram,
-          sem perceber, o que mais se pareceram consigo mesmos.
-        </p>
-
-        <article class="scene">
-          <p class="scene-eyebrow">Pierrot &amp; Arlequina</p>
-          <h3>O jogo no Pátio dos Tecidos</h3>
-          <p>
-            Era perto da <em>declina</em>, a quarta respiração do
-            dia — aquela hora em que o vento muda de direção e os
-            tecidos do pátio param por alguns instantes, como se
-            esperassem uma ordem. Pierrot tinha passado a manhã
-            inteira tentando aprender sozinho uma sequência que
-            pedia dois: um jogo de queda em que cada monge
-            precisava desequilibrar o outro sem tocá-lo. Ele
-            atacava o ar como quem argumenta com uma parede.
-          </p>
-          <p>
-            Arlequina apareceu encostada no vão da porta, um
-            ombro no batente. Ficou ali por um tempo mais longo
-            do que ela costumava suportar em silêncio. Depois
-            entrou. Não anunciou. Apenas ocupou a posição
-            complementar — a que faltava no pátio.
-          </p>
-          <p>
-            Começaram. Pierrot avançou exato; ela desviou com
-            três centímetros a mais do que o necessário, de
-            propósito. Ele hesitou. Ela riu.
-          </p>
-          <p>
-            — “Você está fazendo com a cabeça o que o corpo já
-            sabe. Para, por um minuto.”
-          </p>
-          <p>Ele parou.</p>
-          <p>— “Respira.”</p>
-          <p>Ele respirou.</p>
-          <p>
-            — “Agora, quando eu me mover, <em>não me leia</em>.
-            Me responda.”
-          </p>
-          <p>
-            Ela fintou para a esquerda. Ele foi, pela primeira
-            vez em dias, no tempo certo. Três, quatro, cinco
-            trocas, até que ela, sem pressa, se deixou cair
-            deitada no chão do pátio. Do chão, com a maior
-            solenidade, ordenou:
-          </p>
-          <p>— “Curve-se para mim. Como ao mestre.”</p>
-          <p>
-            Ele não se curvou. Quase sorriu. Ela apontou para
-            ele.
-          </p>
-          <p>— “Se você sorrir agora, eu conto pra todo mundo.”</p>
-          <p>
-            Ele não sorriu. Ela ficou ali, deitada, rindo
-            baixinho para o alto. Quando se levantou para sair,
-            ele disse, sem olhar:
-          </p>
-          <p>— “Obrigado.”</p>
-          <p>
-            Ela não respondeu. Só ergueu uma mão em despedida,
-            por cima do ombro, e o pátio voltou a ficar quieto.
-            Naquele dia, Pierrot entendeu o que os mestres
-            sempre diziam sem precisar dizer: a leveza, bem
-            feita, <em>é</em> disciplina.
-          </p>
-        </article>
-
-        <article class="scene">
-          <p class="scene-eyebrow">Pierrot &amp; Colombino</p>
-          <h3>O livro que Colombino não fechou</h3>
-          <p>
-            Pierrot tinha quinze invernos de monastério — que
-            era como ali se contava idade, já que ninguém sabia
-            direito o que ele havia sido antes de chegar. Estava
-            na Câmara da Leitura Partilhada, sentado diante de
-            dois manuscritos abertos. Falavam do mesmo evento:
-            a queda de uma ordem no sul, anos antes, atacada por
-            quem nunca foi nomeado. Os livros discordavam na
-            véspera. Um dizia que a ordem tinha sido avisada;
-            o outro, que tinha sido traída.
-          </p>
-          <p>
-            Pierrot leu os dois três vezes. Foi atrás de
-            Colombino.
-          </p>
-          <p>— “Qual é a verdade?”</p>
-          <p>
-            Colombino pegou os dois livros, leu as duas
-            passagens sem pressa, e os colocou lado a lado na
-            mesa. <em>Não os fechou.</em> Apontou um, depois o
-            outro, e perguntou:
-          </p>
-          <p>— “Qual das duas você <em>quer</em> que seja? E por quê?”</p>
-          <p>
-            Pierrot ficou calado por muito tempo. A luz da
-            tarde entrava pela janela estreita e marcava as duas
-            páginas com a mesma cor.
-          </p>
-          <p>— “Não sei.”</p>
-          <p>
-            Colombino acenou com a cabeça, como se isso fosse,
-            por si, uma resposta suficiente.
-          </p>
-          <p>— “Então ainda é cedo para fechar o livro.”</p>
-          <p>
-            Não era a resposta que Pierrot queria. Foi a única
-            que ele levou consigo pelo resto da vida. Anos
-            depois, ao falar com alguém em conflito, ele
-            escutou a própria voz dizer, sem perceber:
-          </p>
-          <p>— “Qual das duas você quer que seja?”</p>
-          <p>
-            E, ao perceber, passou dois dedos pela base do
-            pescoço, devagar — gesto que era, antes, de
-            Colombino — como quem pede licença a uma voz maior
-            do que a própria.
-          </p>
-        </article>
-
-        <article class="scene">
-          <p class="scene-eyebrow">Arlequina, Colombino &amp; Pierrot</p>
-          <h3>A noite do pão quente</h3>
-          <p>
-            Foi numa vigília que ninguém lembrava ter
-            ordenado. Os três se encontraram na cozinha fria
-            do monastério, tarde demais para estarem
-            acordados, cedo demais para madrugar. No centro
-            da mesa de pedra, sobre um pano ocre, havia um
-            pão redondo ainda quente — separado,
-            provavelmente, para a primeira respiração da
-            manhã.
-          </p>
-          <p>
-            Arlequina o pegou sem comentar. Colombino abriu
-            a boca para dizer alguma coisa sobre hierarquia
-            e depois, sem explicação, apenas quebrou o pão
-            com as duas mãos em três partes iguais. Pierrot
-            pegou a sua.
-          </p>
-          <p>
-            Estavam comendo, na maior seriedade, quando a
-            mestra responsável pela cozinha entrou pela porta
-            oposta. Os três pararam no mesmo instante. A
-            mestra olhou para cada um, devagar, como quem
-            faz inventário.
-          </p>
-          <p>Arlequina riu primeiro. Só um pouco, pelo nariz.</p>
-          <p>
-            Colombino começou a explicar com três frases a
-            mais do que o necessário — algo sobre a
-            importância do jejum compartilhado e a
-            simbologia do pão como horário relativo.
-          </p>
-          <p>
-            Pierrot curvou-se em silêncio e estendeu o
-            pedaço que ainda não tinha começado a comer.
-          </p>
-          <p>
-            A mestra ficou olhando os três por mais um
-            tempo. Depois suspirou, puxou um quarto banco
-            para si, cortou um pedaço menor do pão oferecido
-            e sentou-se para comer junto.
-          </p>
-          <p>
-            Ninguém disse nada. Arlequina, por algum
-            motivo que não nomeou, começou a chorar
-            devagarinho, ainda comendo. Colombino pousou a
-            mão na mesa, perto da dela, sem tocá-la.
-            Pierrot olhou para o teto. O pão estava, na
-            verdade, muito bom.
-          </p>
-          <p>
-            Na manhã seguinte, ninguém mencionou a vigília.
-            Mas, por semanas, sempre que um dos três passava
-            pela cozinha, a mestra sem olhar cortava um
-            pedaço pequeno de alguma coisa e colocava numa
-            tábua — sem explicação, sem ser cobrada. Os
-            três entenderam.
-          </p>
-          <p>
-            Foi a única vez em muitos anos que Pierrot
-            percebeu, em movimento, o que queria dizer o
-            princípio do Véu: <em>o eu só existe em relação
-            ao outro</em>. E foi também a única noite da
-            vida dele em que ele conseguiu ficar
-            inteiramente ali — sem ecos, sem partida, sem
-            queda. Apenas três irmãos, um pão e uma mestra
-            cansada o bastante para entender.
-          </p>
-        </article>
-      </section>
-
-      <!-- V - FORMAÇÃO -->
-      <section id="formacao" class="section">
-        <p class="section-kicker">V · Formação</p>
-        <h2 class="section-title">Corpo, mente, silêncio</h2>
-        <div class="section-body">
-          <p>
-            No Véu Partilhado, Pierrot treinou seu corpo nas artes marciais,
-            estudou histórias de outros povos, religiões e idiomas, e
-            aprendeu a alinhar ação e consciência. Seu forte não era a
-            força; era a <em>economia</em>. Um golpe era quase sempre
-            curto; três eram quase sempre demais. Os mestres diziam:
-            “Pierrot luta como quem escreve — não usa uma palavra a mais.”
-          </p>
-          <p>
-            Nos estudos, herdou o fascínio pela Palavra sem se tornar um
-            dos dela. Aprendeu idiomas mortos porque gostava da textura
-            de línguas que não se apressam em ser úteis. Leu crônicas de
-            ordens que haviam caído — e leu-as em voz baixa, repetidas
-            vezes, como quem aprende de cor um mapa para não se perder
-            no mesmo lugar.
-          </p>
-          <p>
-            Com o tempo, uma inquietação cresceu nele. Ele temia que o
-            monastério, em sua tentativa de ser flexível e aberto,
-            estivesse se tornando vulnerável demais para um mundo que
-            não compartilhava de seus princípios. Essa dúvida o
-            incomodava por motivos opostos ao que os mestres imaginavam:
-            ele não achava o Véu fraco — achava o <em>mundo</em>
-            despreparado para o que o Véu oferecia. Queria ver por
-            conta própria se isso era verdade.
-          </p>
-          <p>
-            Ele precisava entender o mundo além da montanha.
-          </p>
-        </div>
-      </section>
-
-      <!-- VI - A PARTIDA -->
-      <section id="partida" class="section">
-        <p class="section-kicker">VI · A Partida</p>
-        <h2 class="section-title">Despedidas silenciosas</h2>
-
-        <figure class="section-figure section-figure--wide">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Ama_Dablam.jpg?width=1400"
-            alt="Cordilheira imponente com pico afiado coberto de neve, evocando a montanha que Pierrot deixou para trás."
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <em>Ama Dablam</em>, Himalaia.
-            <a href="https://commons.wikimedia.org/wiki/File:Ama_Dablam.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>.
-            Imagem evocativa da montanha do Véu Partilhado.
-          </figcaption>
-        </figure>
-
-        <div class="section-body">
-          <p>
-            Então ele partiu.
-          </p>
-          <p>
-            Não houve briga. Não houve ruptura. Apenas
-            <strong>despedidas silenciosas</strong>. Na véspera, o
-            monastério inteiro tinha feito o voto diário
-            <em>ficar com o que é</em>, e Pierrot, sem dizer nada para
-            ninguém, havia trocado a palavra por <em>ficar com o que
-            virá</em>. Nenhum mestre corrigiu. Talvez não tenham
-            ouvido. Talvez tenham entendido.
-          </p>
-          <p>
-            Arlequina riu como sempre — mas ficou até tarde treinando
-            com ele naquele dia. Em algum momento, entre um jogo de
-            queda e outro, ela parou no meio do pátio, enxugou o rosto
-            com a manga e disse, sem olhar: “se quiser, a gente fica
-            treinando a noite toda; mas não me pede pra sorrir de
-            novo hoje, tá?” Ele não pediu. Eles treinaram, em silêncio,
-            até o sino da vela bater suas três vezes.
-          </p>
-          <blockquote class="callout-quote">
-            <p>“Volte diferente. Só não volte vazio.”</p>
-            <cite>— Colombino, no dia da partida</cite>
-          </blockquote>
-          <p>
-            Pierrot nunca voltou. Não da forma que Colombino pediu.
-          </p>
-        </div>
-      </section>
-
-      <!-- VII - A QUEDA -->
-      <section id="queda" class="section section--group-anchor">
-        <p class="section-kicker">VII · A Queda</p>
-        <h2 class="section-title">As ruínas sem respostas</h2>
-
-        <figure class="section-figure section-figure--wide">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Rievaulx_Abbey_ruins.jpg?width=1400"
-            alt="Ruínas de pedra de uma abadia, com arcos quebrados e paredes parcialmente desmoronadas."
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <em>Rievaulx Abbey ruins</em>, Inglaterra.
-            <a href="https://commons.wikimedia.org/wiki/File:Rievaulx_Abbey_ruins.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>.
-            Imagem evocativa das ruínas do Véu Partilhado.
-          </figcaption>
-        </figure>
-
-        <div class="section-body">
-          <p>
-            Durante sua ausência, o monastério foi destruído.
-          </p>
-          <p>
-            Quando retornou, encontrou apenas ruínas. A primeira coisa
-            que o assaltou não foi o que havia — foi o que
-            <em>faltava</em>. O vento ainda atravessava os pátios,
-            mas não encontrava mais tecidos para dançar, e por isso
-            silvava de um jeito novo, mais fino, quase humano. A
-            madeira rachada, que antes seguia em serviço com grampos,
-            agora estava livre para ser apenas madeira rachada. Ninguém
-            segurava mais nada no lugar.
-          </p>
-          <p class="stanza">
-            Sem corpos.<br />
-            Sem respostas.<br />
-            Sem despedidas.
-          </p>
-          <p>
-            A ausência de corpos foi o que mais o perseguiu. Se tivesse
-            encontrado mortos, teria luto. Encontrou apenas o espaço
-            onde eles haviam sido — e um silêncio que, ao contrário do
-            silêncio do Pavilhão das Horas, não era oferenda: era
-            cicatriz.
-          </p>
-          <p>
-            E então ele ficou.
-          </p>
-        </div>
-      </section>
-
-      <!-- VIII - FERIDA ANTI-ENTRÓPICA -->
-      <section id="ferida" class="section">
-        <p class="section-kicker">VIII · Ferida Anti-Entrópica</p>
-        <h2 class="section-title">O tempo que se quebrou por dentro</h2>
-
-        <div class="section-body">
-          <p>
-            Pierrot permaneceu nas ruínas por um tempo impossível de
-            medir. Dias se confundiam. Memórias não obedeciam ordem. O
-            silêncio parecia cheio.
-          </p>
-          <p>
-            Durante esse período, ele foi afetado por um fenômeno raro:
-            um <strong>campo anti-entrópico</strong>. Esse campo não o
-            transportou no tempo. Ele fez algo pior:
-          </p>
-          <blockquote class="callout-quote">
-            <p>
-              Desalinhou o corpo, a memória e a percepção de Pierrot
-              da ordem natural da própria vida.
-            </p>
-          </blockquote>
-
-          <div class="effects-card">
-            <h3>Como funciona — o que se observa</h3>
-            <p>
-              O campo trabalha contra a
-              <a href="https://pt.wikipedia.org/wiki/Entropia" target="_blank" rel="noopener">entropia</a>
-              local: aquilo que deveria seguir em frente (o corpo que
-              envelhece, a memória que se organiza em fila, a percepção
-              que casa presente com passado) é devolvido para um estado
-              anterior — às vezes só um pouco, às vezes demais. Os
-              efeitos conhecidos em Pierrot são três:
-            </p>
-            <ul>
-              <li>Rejuvenescimento parcial do corpo.</li>
-              <li>Apagamento e desordem da memória recente.</li>
-              <li>“Vozes” como ecos de lembranças fora de sequência.</li>
-            </ul>
-          </div>
-
-          <div class="effects-card">
-            <h3>Regras e limites</h3>
-            <ul>
-              <li>
-                <strong>Não é loucura.</strong> Pierrot não escuta algo
-                novo; ele ouve <em>o que teria sido dito</em>, em
-                memórias cuja ordem se perdeu.
-              </li>
-              <li>
-                <strong>Não é profecia.</strong> O campo nunca antecipa
-                o que vai acontecer. Ele só bagunça o que já aconteceu.
-              </li>
-              <li>
-                <strong>Não é controlável.</strong> Pierrot não ativa o
-                fenômeno; ele convive com as réplicas, como quem mora
-                sobre uma linha de falha.
-              </li>
-              <li>
-                <strong>Tem preço.</strong> A cada eco, Pierrot perde
-                um pedaço da cronologia pessoal: alguém que ele conheceu
-                ontem pode, por algumas horas, parecer alguém conhecido
-                há anos — ou ao contrário.
-              </li>
-            </ul>
-          </div>
-
-          <p>
-            <strong>Pierrot não enlouqueceu.</strong> Ele estava vivendo
-            sua própria mente fora de ordem. Por anos, acreditou que
-            havia perdido a sanidade. Só mais tarde compreendeu: ele
-            havia sido <em>temporalmente ferido</em>.
-          </p>
-          <p>
-            A convivência com a ferida virou prática. Pierrot
-            desenvolveu pequenos rituais de ancoragem — repetir em voz
-            baixa o nome da cidade em que estava, tocar a própria palma
-            com a ponta dos dedos, recitar mentalmente o dogma “o corpo
-            é a oração visível” até que o corpo respondesse. Não eram
-            tiques; eram <em>tecnologia</em>. Eram o jeito que ele
-            encontrou de dizer ao próprio tempo: <em>eu estou aqui, e
-            aqui é agora</em>.
-          </p>
-        </div>
-      </section>
-
-      <!-- IX - ERRÂNCIA -->
-      <section id="errancia" class="section">
-        <p class="section-kicker">IX · Anos de Errância</p>
-        <h2 class="section-title">O sinal que restou</h2>
-        <div class="section-body">
-          <p>
-            Por muito tempo, quem cruzou com Pierrot viu apenas um
-            andarilho esfarrapado — um homem que falava com o que não
-            estava ali, que parava no meio de uma rua para escutar o
-            que ninguém mais ouvia. Era a tradução visível da
-            <a href="#ferida">ferida</a>. Algumas cidades o expulsaram.
-            Algumas o alimentaram. Uma criança, numa feira qualquer,
-            lhe deu um copo de água com leite e ficou ao lado até ele
-            terminar, como se soubesse que beber sozinho podia ser
-            mais difícil do que ter sede.
-          </p>
-          <p>
-            No monastério, a cabeça raspada e a barba cuidada eram
-            disciplina diária — o corpo era a oração visível,
-            inclusive nos gestos pequenos. Depois da destruição,
-            Pierrot deixou de raspar. O cabelo cresceu; a barba,
-            também. Não por descuido: por escolha silenciosa. Era
-            o modo que ele encontrou de dizer, sem precisar dizer
-            em voz alta, a única frase que ainda cabia na boca:
-          </p>
-          <blockquote class="callout-quote">
-            <p>“Ainda não estou inteiro.”</p>
-          </blockquote>
-          <p>
-            Enquanto o cabelo fosse crescendo, ele sabia que ainda
-            não era hora de voltar. O ritual de raspar era, antes
-            de qualquer coisa, o ritual de <em>pertencer</em> — e
-            pertencer, naquele tempo, ainda não era verdade. Cada
-            vez que se perguntava se devia retomar o cuidado com o
-            corpo, decidia <em>ainda não</em> — porque decidir
-            cuidar antes de entender teria sido, de algum modo,
-            traição. O Véu ensinava o belo que envelhece; nunca
-            ensinou o belo que mente sobre a própria idade.
-          </p>
-        </div>
-      </section>
-
-      <!-- X - DESCOBERTA -->
-      <section id="descoberta" class="section">
-        <p class="section-kicker">X · A Descoberta</p>
-        <h2 class="section-title">Justiça deslocada do centro</h2>
-        <div class="section-body">
-          <p>
-            Nas aventuras que vieram depois, Pierrot descobriu quem
-            havia destruído o monastério. A revelação não o incendiou:
-            <em>o estabilizou</em>. Onde ele esperava fogo, encontrou
-            chão. Onde ele esperava ser destroçado pela certeza,
-            descobriu que a certeza — depois de anos sem ela — tem um
-            peso que acalma mais do que fere, como uma pedra finalmente
-            colocada no lugar certo.
-          </p>
-          <p>
-            Ele poderia ter atravessado a noite com um objetivo velho e
-            simples: ir atrás. Não foi. Escolher esperar — não esquecer,
-            não perdoar, apenas <em>esperar</em> — foi, talvez, a
-            primeira decisão realmente dele desde a queda. Antes, tudo
-            tinha sido reação: à perda, aos ecos, ao frio. Agora, pela
-            primeira vez em muitos anos, uma decisão foi uma escolha.
-          </p>
-          <p>
-            Ele ainda quer justiça. Mas agora isso não é o centro. O
-            centro é <strong>criar algo que não possa ser destruído tão
-            facilmente</strong>. Não está ali por vingança. Está ali
-            para aprender como o mundo funciona fora dos muros — e
-            para que, quando decidir erguer pedras outra vez, elas não
-            repitam os erros das primeiras.
-          </p>
-        </div>
-      </section>
-
-      <!-- XI - RECONSTRUÇÃO -->
-      <section id="reconstrucao" class="section section--group-anchor">
-        <p class="section-kicker">XI · Reconstrução</p>
-        <h2 class="section-title">O Caminho da Mão Limpa</h2>
-
-        <figure class="section-figure">
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Thiksey_Monastery.jpg?width=1200"
-            alt="Monastério de Thiksey, conjunto de edifícios brancos e ocres em encosta de montanha."
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <em>Thiksey Monastery</em>, Ladakh.
-            <a href="https://commons.wikimedia.org/wiki/File:Thiksey_Monastery.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>.
-            Imagem evocativa de um monastério em pé — o que Pierrot
-            ainda carrega como possibilidade.
-          </figcaption>
-        </figure>
-
-        <div class="section-body">
-          <p>
-            Hoje, Pierrot é diferente. Ele raspou a cabeça novamente.
-            Voltou a cuidar do corpo. Escolheu seguir o
-            <strong>Caminho da Mão Limpa</strong>: lutar sem armas
-            ocultas, sem esconder intenção.
-          </p>
-          <p>
-            O retorno ao cuidado do corpo foi um ritual, não um
-            pensamento. Ele raspou a cabeça com a mesma lâmina, cega
-            de tanto uso, que havia pertencido a um dos sinos do
-            Pavilhão das Horas; esfregou o rosto com água fria três
-            vezes — uma por respiração do dia que ele ainda conseguia
-            nomear; e amarrou, com um nó duplo, a tira que prende o
-            antebraço direito, na mesma posição em que os antigos
-            dogmas pediam humildade ao corpo que treina.
-          </p>
-          <p>
-            As <strong>Luvas da Tempestade</strong> são usadas apenas
-            quando a violência é inevitável. Elas não são decoração
-            nem troféu: são um <em>pacto</em>. Enquanto estiverem
-            guardadas, ele não precisa responder com o pior que sabe
-            fazer. Quando ele as veste, algo mudou no mundo — não
-            nele.
-          </p>
-          <p>
-            Da segunda leitura, só resta a primeira verdade: o
-            corpo continua sendo a oração visível, mesmo quando a
-            oração carrega cicatriz. O que antes foi lembrete do
-            que faltava virou registro de quem <em>passou por
-            isso</em> — e escolheu ficar.
-          </p>
-          <p>
-            Ele não vive mais fugindo. Ele está reconstruindo. O
-            monastério não existe mais — mas ele ainda carrega o que
-            ele representava, no passo curto, no ombro em paz, no
-            modo como escuta antes de responder.
-          </p>
-          <blockquote class="callout-quote callout-quote--seal">
-            <p>Reconstruir o Véu Partilhado é também reconstruir a si mesmo.</p>
-          </blockquote>
-        </div>
-      </section>
-
-      <!-- XII - PERSONALIDADE E FALHA -->
-      <section id="personalidade" class="section section--group-anchor">
-        <p class="section-kicker">XII · Presente</p>
-        <h2 class="section-title">Personalidade e Falha</h2>
-        <div class="section-body">
-          <p>
-            Pierrot é silencioso, mas não distante. Observador, mas não
-            frio. Ele valoriza profundamente conexão, mas demonstra
-            isso através de ações, não palavras. Em combate é
-            preciso e quase ritual; fora dele, educado e um pouco
-            afastado — sem ser ausente. De vez em quando, um comentário
-            irônico escapa, como se o caminho do Riso lembrasse, ainda
-            hoje, que não foi embora de todo.
-          </p>
-
-          <div class="flaw-card">
-            <h3>Desejos conflitantes</h3>
-            <ul>
-              <li>Quer reconstruir o Véu — e teme <em>ser</em> quem o reconstrói.</li>
-              <li>Quer justiça — e desconfia da pressa que vem com ela.</li>
-              <li>Quer pertencer ao grupo que caminha ao seu lado — e, ao mesmo tempo, guarda um passo de distância, como quem ainda mede a espessura do chão antes de pisar firme.</li>
-            </ul>
-          </div>
-
-          <div class="flaw-card">
-            <h3>Medos</h3>
-            <ul>
-              <li>Repetir, sem perceber, os erros que derrubaram o Véu.</li>
-              <li>Ancorar outros na sua própria cronologia partida.</li>
-              <li>Ser lembrado só pelo que perdeu, e não pelo que escolheu depois.</li>
-            </ul>
-          </div>
-
-          <div class="flaw-card">
-            <h3>Falha — Medo de Repetir o Passado</h3>
-            <p>
-              Pierrot teme que, ao reconstruir o monastério ou assumir
-              liderança, acabará cometendo os mesmos erros que levaram
-              à sua queda.
-            </p>
-            <ul>
-              <li>Hesita em liderar.</li>
-              <li>Questiona suas decisões.</li>
-              <li>Evita impor sua vontade.</li>
-            </ul>
-            <blockquote class="callout-quote">
-              <p>“Não temo falhar. Temo falhar da mesma forma outra vez.”</p>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <!-- XIII - CÓDICE -->
-      <section id="codice" class="section section--codex">
-        <p class="section-kicker">XIII · Códice</p>
-        <h2 class="section-title">Frases que permanecem</h2>
-        <ul class="codex-list">
-          <li>
-            <blockquote><p>“O eu só existe em relação ao outro.”</p></blockquote>
-            <cite>— Princípio do Véu Partilhado</cite>
-          </li>
-          <li>
-            <blockquote><p>“A forma muda. O apego é que pesa.”</p></blockquote>
-            <cite>— <a href="#caminhos">Os do Riso</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Sou forma em movimento. Sou intenção antes do gesto.”</p></blockquote>
-            <cite>— <a href="#caminhos">Os do Silêncio</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Quem nomeia, aproxima.”</p></blockquote>
-            <cite>— <a href="#caminhos">Os da Palavra</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Pergunta é um modo de não abandonar ninguém.”</p></blockquote>
-            <cite>— <a href="#irmaos">Colombino</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Se eu parar de rir, é porque preciso.”</p></blockquote>
-            <cite>— <a href="#irmaos">Arlequina</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Volte diferente. Só não volte vazio.”</p></blockquote>
-            <cite>— <a href="#partida">Colombino, no dia da partida</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Ainda não estou inteiro.”</p></blockquote>
-            <cite>— <a href="#errancia">Pierrot, nos anos de errância</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Reconstruir o Véu Partilhado é também reconstruir a si mesmo.”</p></blockquote>
-            <cite>— <a href="#reconstrucao">Pierrot, hoje</a></cite>
-          </li>
-          <li>
-            <blockquote><p>“Não temo falhar. Temo falhar da mesma forma outra vez.”</p></blockquote>
-            <cite>— <a href="#personalidade">Pierrot, a falha</a></cite>
-          </li>
-        </ul>
-      </section>
-
-      <!-- XIV - INSPIRAÇÕES -->
-      <section id="inspiracoes" class="section section--inspirations">
-        <p class="section-kicker">XIV · Tessitura</p>
-        <h2 class="section-title">Inspirações narrativas e conceituais</h2>
-        <p class="section-lede">
-          Pierrot não nasceu no vácuo. Esta é a sala onde as referências
-          que moldaram a <em>apresentação</em> da sua história ficam
-          em repouso — não como fontes da lore, mas como ecos que ajudam
-          a lê-la melhor. Cada link abre em nova aba.
-        </p>
-
-        <ul class="codex-list">
-          <li>
-            <blockquote><p>
-              <strong><a href="https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender" target="_blank" rel="noopener">Avatar: The Last Airbender</a></strong>
-              — para o conflito entre responsabilidade e escolha
-              interior. O Pierrot de hoje carrega o peso de reconstruir
-              o que caiu sem se tornar caricatura daquilo que perdeu;
-              é a tensão entre dever e equilíbrio que Aang leva pela
-              série.
-            </p></blockquote>
-            <cite>— equilíbrio, responsabilidade, o custo de liderar</cite>
-          </li>
-          <li>
-            <blockquote><p>
-              <strong><a href="https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter" target="_blank" rel="noopener">Hunter × Hunter</a></strong>
-              — para a clareza do sistema. A
-              <a href="#ferida">Ferida Anti-Entrópica</a> e os
-              <a href="#caminhos">Três Caminhos</a> foram formalizados
-              com regras, custos e limites explícitos, no espírito do
-              <em>Nen</em>: poder só importa quando tem preço, e preço
-              só importa quando é possível entendê-lo.
-            </p></blockquote>
-            <cite>— regras claras, estratégia, consequência</cite>
-          </li>
-          <li>
-            <blockquote><p>
-              <strong><a href="https://en.wikipedia.org/wiki/Hyperion_Cantos" target="_blank" rel="noopener">Hyperion Cantos</a></strong>
-              (Dan Simmons) — para a sensação de uma história maior
-              do que os protagonistas e de pedaços que só se entendem
-              quando encontrados. A memória de Pierrot fora de ordem,
-              os ecos e a existência de um evento central do qual só
-              se vê os arredores devem muito à estrutura fragmentária
-              dos contos do <em>Shrike</em>.
-            </p></blockquote>
-            <cite>— narrativa fragmentada, inevitabilidade, mistério gradual</cite>
-          </li>
-          <li>
-            <blockquote><p>
-              <strong><a href="https://pt.wikipedia.org/wiki/Pierrot" target="_blank" rel="noopener">Pierrot</a></strong>
-              da <a href="https://pt.wikipedia.org/wiki/Commedia_dell%27arte" target="_blank" rel="noopener">Commedia dell'Arte</a>
-              — para a dualidade trágica. O Pierrot tradicional é
-              triste, terno, silencioso, e carrega no corpo uma
-              inocência que sofre sem conseguir evitar. O nosso Pierrot
-              herda isso como <em>forma</em>, não como destino: o
-              rosto branco existe para sublinhar o que acontece atrás
-              dele.
-            </p></blockquote>
-            <cite>— melancolia, dualidade, expressão simbólica</cite>
-          </li>
-          <li>
-            <blockquote><p>
-              <strong><a href="https://en.wikipedia.org/wiki/Brandon_Sanderson" target="_blank" rel="noopener">Brandon Sanderson</a></strong>
-              — para o padrão de escrita. Clareza antes de beleza, regra
-              antes de exceção, e a convicção de que um sistema mágico
-              funciona quando o leitor consegue antecipar o custo. Esta
-              própria página tenta seguir a disciplina das
-              <a href="https://en.wikipedia.org/wiki/Brandon_Sanderson#Laws_of_magic" target="_blank" rel="noopener">Leis da Magia</a>
-              de Sanderson — não para fazer manual, mas para não confundir
-              prosa literária com prosa obscura.
-            </p></blockquote>
-            <cite>— clareza narrativa, regras que geram confiança</cite>
-          </li>
-        </ul>
-        <p class="section-body">
-          A escolha dessas referências não é arbitrária. Cada uma toca
-          em um eixo da história: <em>Avatar</em> fala do peso de
-          reconstruir; <em>Hunter × Hunter</em>, do preço do poder;
-          <em>Hyperion</em>, da memória fora de ordem; a
-          <em>Commedia</em>, da máscara que revela; Sanderson, da
-          disciplina necessária para contar tudo isso sem perder o
-          leitor no caminho.
-        </p>
-      </section>
-
-      <!-- XV - QUESTÕES EM ABERTO -->
-      <section id="questoes" class="section section--open">
-        <p class="section-kicker">XV · Questões em Aberto</p>
-        <h2 class="section-title">Lacunas que o material não preenche</h2>
-        <p class="section-lede">
-          Para manter fidelidade à lore consolidada, os pontos abaixo
-          <strong>não</strong> foram inventados — eles aguardam decisão de mesa.
-        </p>
-        <ol class="open-list">
-          <li>
-            <strong>Identidade dos responsáveis pela queda.</strong>
-            O material afirma que <a href="#descoberta">Pierrot descobriu quem foi</a>,
-            mas não revela nome, facção ou motivação.
-          </li>
-          <li>
-            <strong>Origem do campo anti-entrópico.</strong>
-            O fenômeno é descrito por <a href="#ferida">efeitos</a>, nunca por
-            causa (magia, artefato, divindade, vínculo do próprio Pierrot com o
-            local...).
-          </li>
-          <li>
-            <strong>As Luvas da Tempestade.</strong>
-            Mencionadas como objeto usado “apenas quando a violência é
-            inevitável”, sem descrição de origem, aparência ou propriedades.
-          </li>
-          <li>
-            <strong>Destino final de Arlequina e Colombino.</strong>
-            O texto sugere fortemente que não sobreviveram
-            (<a href="#queda">ruínas sem corpos, sem despedidas</a>),
-            mas nunca afirma explicitamente.
-          </li>
-          <li>
-            <strong>Linha do tempo absoluta.</strong>
-            A duração da <a href="#ferida">ferida anti-entrópica</a> é
-            propositalmente indefinida — “tempo impossível de medir”. O mesmo
-            vale para o intervalo entre a descoberta e o presente.
-          </li>
-        </ol>
-      </section>
-
-    </article>
-
-  </div>
+    </li>
+  </ul>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-title">Pierrot — O Véu que Permanece</p>
-    <p class="footer-credits">
-      Imagens: <a href="https://commons.wikimedia.org/" rel="noopener" target="_blank">Wikimedia Commons</a> (domínio público e CC).
-      Máscaras em SVG autorais. Inspirações conceituais creditadas em
-      <a href="#inspiracoes">Tessitura</a>.
-    </p>
-  </div>
+<footer>
+  Codex RPG · uso pessoal
 </footer>
-
-<script>
-  (function () {
-    // Smooth scroll: respeita prefers-reduced-motion; CSS já trata via scroll-behavior.
-
-    // Menu mobile
-    var toggle = document.querySelector('.nav-toggle');
-    var mobile = document.getElementById('site-nav-mobile');
-    if (toggle && mobile) {
-      toggle.addEventListener('click', function () {
-        var open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        if (open) {
-          mobile.setAttribute('hidden', '');
-        } else {
-          mobile.removeAttribute('hidden');
-        }
-      });
-      mobile.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          toggle.setAttribute('aria-expanded', 'false');
-          mobile.setAttribute('hidden', '');
-        });
-      });
-    }
-
-    // Scrollspy: destaca item da timeline e do header conforme a seção visível.
-    var sections = Array.prototype.slice.call(document.querySelectorAll('main .section'));
-    var timelineLinks = Array.prototype.slice.call(document.querySelectorAll('.timeline a'));
-    var headerLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a'));
-
-    var groupMap = {
-      'origem': 'origem',
-      'monasterio': 'monasterio',
-      'caminhos': 'monasterio',
-      'irmaos': 'monasterio',
-      'cenas': 'monasterio',
-      'formacao': 'monasterio',
-      'partida': 'monasterio',
-      'queda': 'queda',
-      'ferida': 'queda',
-      'errancia': 'queda',
-      'descoberta': 'queda',
-      'reconstrucao': 'reconstrucao',
-      'personalidade': 'presente',
-      'codice': 'presente',
-      'inspiracoes': 'presente',
-      'questoes': 'presente'
-    };
-
-    function clearActive(links) {
-      links.forEach(function (a) { a.classList.remove('is-active'); });
-    }
-
-    function setActiveById(id) {
-      clearActive(timelineLinks);
-      timelineLinks.forEach(function (a) {
-        if (a.getAttribute('href') === '#' + id) a.classList.add('is-active');
-      });
-      var group = groupMap[id] || id;
-      clearActive(headerLinks);
-      headerLinks.forEach(function (a) {
-        var href = a.getAttribute('href');
-        if (href === '#' + group) a.classList.add('is-active');
-        if (group === 'presente' && href === '#personalidade') a.classList.add('is-active');
-      });
-    }
-
-    if ('IntersectionObserver' in window && sections.length) {
-      var observer = new IntersectionObserver(function (entries) {
-        var visible = entries.filter(function (e) { return e.isIntersecting; });
-        if (!visible.length) return;
-        visible.sort(function (a, b) {
-          return Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top);
-        });
-        var id = visible[0].target.id;
-        if (id) setActiveById(id);
-      }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.1, 0.5, 1] });
-
-      sections.forEach(function (s) { observer.observe(s); });
-    }
-
-    headerLinks.forEach(function (a) {
-      if (a.getAttribute('href') === '#presente') {
-        a.setAttribute('href', '#personalidade');
-      }
-    });
-  })();
-</script>
 
 </body>
 </html>

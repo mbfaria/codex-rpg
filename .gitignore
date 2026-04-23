@@ -21,8 +21,9 @@ field_dump.txt
 node_modules/
 dist/
 
-# Fontes privadas (lore bruta e ficha D&D) — não publicar
-initial_stuff.txt
+# Fontes privadas — histórico bruto, fichas, notas
+# (valem na raiz e em qualquer subpasta de personagem)
+**/initial_stuff.txt
+**/_source/
+**/private/
 *.pdf
-/private/
-/_source/
