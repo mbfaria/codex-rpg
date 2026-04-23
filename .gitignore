@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Python / tooling temporário
+__pycache__/
+*.pyc
+field_dump.txt
+
+# Node (caso algum dia se use build tool)
+node_modules/
+dist/
+
+# Fontes privadas (lore bruta e ficha D&D) — não publicar
+initial_stuff.txt
+*.pdf
+/private/
+/_source/

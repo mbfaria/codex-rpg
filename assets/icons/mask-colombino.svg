@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-label="Mascara Hyottoko da Palavra: rosto indigo com faixa dourada e ideograma.">
+  <title>Colombino - Os da Palavra</title>
+  <ellipse cx="70" cy="82" rx="54" ry="56" fill="#1a1722" stroke="#d9c48a" stroke-width="2.2"/>
+  <path d="M18 52 Q70 40 122 52 L122 64 Q70 54 18 64 Z" fill="#d9c48a" stroke="#0b0b10" stroke-width="1.6" stroke-linejoin="round"/>
+  <g stroke="#0b0b10" stroke-width="1.8" stroke-linecap="round" fill="none">
+    <line x1="60" y1="52" x2="80" y2="52"/>
+    <line x1="62" y1="56" x2="78" y2="56"/>
+    <line x1="62" y1="60" x2="78" y2="60"/>
+  </g>
+  <rect x="64" y="62" width="12" height="4" fill="none" stroke="#0b0b10" stroke-width="1.4"/>
+  <path d="M20 46 Q4 42 2 54 Q4 66 22 62 Z" fill="#d9c48a" stroke="#0b0b10" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M8 54 L-2 60" stroke="#d9c48a" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M10 60 L0 66" stroke="#d9c48a" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M34 84 Q46 78 58 82 Q46 88 34 84 Z" fill="#d9c48a"/>
+  <path d="M82 82 Q94 78 106 84 Q94 88 82 82 Z" fill="#d9c48a"/>
+  <circle cx="46" cy="84" r="2" fill="#0b0b10"/>
+  <circle cx="94" cy="84" r="2" fill="#0b0b10"/>
+  <circle cx="34" cy="104" r="4.5" fill="#d9c48a" opacity="0.4"/>
+  <circle cx="100" cy="104" r="4.5" fill="#d9c48a" opacity="0.4"/>
+  <path d="M56 116 Q70 122 86 114" fill="none" stroke="#d9c48a" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
